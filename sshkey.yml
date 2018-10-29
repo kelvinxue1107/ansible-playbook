@@ -1,0 +1,6 @@
+# Using alternate directory locations:
+  - hosts: all
+    user: user
+    tasks:
+     - name: ssh-copy
+       authorized_key: user=user state=present key="{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"
